@@ -267,17 +267,19 @@
 
     .separate-column {
       display: grid;
-      grid-template-rows: 234px 160px 124px 128px 144px;
+      grid-template-rows: none;
+      grid-auto-rows: auto;
       gap: 8px;
       min-width: 0;
     }
 
     .category-row {
+      --row-min: 128px;
       display: grid;
       grid-template-columns: 220px minmax(0, 1fr);
       gap: 14px;
       align-items: center;
-      min-height: 0;
+      min-height: var(--row-min);
       padding: 6px 16px 6px 6px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -287,22 +289,27 @@
     }
 
     .category-row.outdoor-row {
+      --row-min: 234px;
       border-color: rgba(239, 187, 131, 0.3);
     }
 
     .category-row.shower-row {
+      --row-min: 160px;
       border-color: rgba(131, 226, 226, 0.28);
     }
 
     .category-row.golf-row {
+      --row-min: 124px;
       border-color: rgba(120, 214, 75, 0.27);
     }
 
     .category-row.data-row {
+      --row-min: 128px;
       border-color: rgba(86, 169, 232, 0.27);
     }
 
     .category-row.ai-row {
+      --row-min: 144px;
       border-color: rgba(255, 208, 0, 0.26);
     }
 
@@ -774,9 +781,6 @@
         margin: 0 auto;
       }
 
-      .category-row {
-        min-height: 0;
-      }
     }
 
     @media (max-width: 700px) {
@@ -816,7 +820,7 @@
       .category-row {
         grid-template-columns: clamp(100px, 32vw, 220px) minmax(0, 1fr);
         gap: 12px;
-        min-height: 0;
+        min-height: var(--row-min);
         padding: 6px 12px 6px 6px;
       }
 
@@ -840,13 +844,24 @@
         font-size: 0.69rem;
       }
 
-      .separate-column {
-        grid-template-rows:
-          clamp(120px, 35vw, 234px)
-          clamp(108px, 24vw, 160px)
-          124px
-          124px
-          140px;
+      .category-row.outdoor-row {
+        --row-min: clamp(136px, 36vw, 180px);
+      }
+
+      .category-row.shower-row {
+        --row-min: clamp(126px, 30vw, 150px);
+      }
+
+      .category-row.golf-row {
+        --row-min: 124px;
+      }
+
+      .category-row.data-row {
+        --row-min: 128px;
+      }
+
+      .category-row.ai-row {
+        --row-min: 144px;
       }
 
       .offsite-note {
