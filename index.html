@@ -18,25 +18,16 @@
       --muted: #aeb8b5;
       --muted-2: #7f8b87;
       --farm: #123d2b;
-      --farm-deep: #0b2d20;
       --farm-edge: #4f9a6e;
       --outdoor: #9a5e32;
-      --outdoor-deep: #6e3f22;
-      --outdoor-edge: #efbb83;
       --shower: #237d83;
-      --shower-deep: #15565d;
-      --shower-edge: #83e2e2;
       --golf: #78d64b;
-      --golf-deep: #61bd36;
-      --golf-edge: #b9f38f;
       --data: #173f60;
-      --data-deep: #102f49;
       --data-edge: #56a9e8;
       --ai: #ffd000;
-      --ai-edge: #ffe887;
       --ai-ink: #171300;
       --focus: #ffffff;
-      --shadow: 0 32px 90px rgba(0, 0, 0, 0.48);
+      --shadow: 0 20px 56px rgba(0, 0, 0, 0.34);
       --radius-xl: 30px;
       --radius-lg: 20px;
       --radius-md: 14px;
@@ -56,8 +47,8 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 18% 0%, rgba(120, 185, 74, 0.11), transparent 32rem),
-        radial-gradient(circle at 100% 38%, rgba(86, 169, 232, 0.08), transparent 38rem),
+        radial-gradient(circle at 18% 0%, rgba(120, 185, 74, 0.055), transparent 32rem),
+        radial-gradient(circle at 100% 38%, rgba(86, 169, 232, 0.04), transparent 38rem),
         var(--page);
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 16px;
@@ -102,7 +93,7 @@
 
     .panel {
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.065);
       border-radius: var(--radius-xl);
       background: rgba(17, 22, 22, 0.96);
       box-shadow: var(--shadow);
@@ -194,14 +185,10 @@
       max-width: 620px;
       aspect-ratio: 1;
       overflow: hidden;
-      border: 1.5px solid var(--farm-edge);
+      border: 0;
       border-radius: 24px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 42%),
-        linear-gradient(145deg, #174b35, var(--farm-deep));
-      box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.34),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+      background: var(--farm);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
       isolation: isolate;
     }
 
@@ -209,7 +196,7 @@
       position: absolute;
       inset: 0;
       z-index: -1;
-      opacity: 0.22;
+      opacity: 0.1;
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -255,14 +242,13 @@
       right: clamp(18px, 3vw, 30px);
       bottom: clamp(18px, 3vw, 30px);
       padding: 7px 10px;
-      border: 1px solid rgba(185, 243, 207, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 999px;
       color: #d4eddd;
-      background: rgba(4, 20, 13, 0.56);
+      background: rgba(4, 20, 13, 0.78);
       font-size: clamp(0.62rem, 1vw, 0.75rem);
       font-weight: 700;
       letter-spacing: 0.04em;
-      backdrop-filter: blur(6px);
     }
 
     .separate-column {
@@ -281,36 +267,29 @@
       align-items: center;
       min-height: var(--row-min);
       padding: 6px 16px 6px 6px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: var(--radius-lg);
-      background:
-        linear-gradient(115deg, rgba(255, 255, 255, 0.025), transparent 55%),
-        var(--panel-3);
+      background: var(--panel-3);
     }
 
     .category-row.outdoor-row {
       --row-min: 234px;
-      border-color: rgba(239, 187, 131, 0.3);
     }
 
     .category-row.shower-row {
       --row-min: 160px;
-      border-color: rgba(131, 226, 226, 0.28);
     }
 
     .category-row.golf-row {
       --row-min: 124px;
-      border-color: rgba(120, 214, 75, 0.27);
     }
 
     .category-row.data-row {
       --row-min: 128px;
-      border-color: rgba(86, 169, 232, 0.27);
     }
 
     .category-row.ai-row {
       --row-min: 144px;
-      border-color: rgba(255, 208, 0, 0.26);
     }
 
     .shape-cell {
@@ -320,12 +299,12 @@
       height: 100%;
       min-height: 0;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.045);
       border-radius: 16px;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        rgba(0, 0, 0, 0.14);
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        rgba(0, 0, 0, 0.1);
       background-size: 16px 16px;
     }
 
@@ -342,52 +321,48 @@
       flex: 0 0 auto;
       box-sizing: border-box;
       aspect-ratio: 1;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.22);
     }
 
     .outdoor-square {
       width: 206.232px;
-      border: 1.5px solid var(--outdoor-edge);
+      border: 0;
       border-radius: 12px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 44%),
-        linear-gradient(145deg, var(--outdoor), var(--outdoor-deep));
+      background: var(--outdoor);
     }
 
     .shower-square {
       width: 132.208px;
-      border: 1.5px solid var(--shower-edge);
+      border: 0;
       border-radius: 10px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 44%),
-        linear-gradient(145deg, var(--shower), var(--shower-deep));
+      background: var(--shower);
     }
 
     .golf-square {
       width: 87.944px;
-      border: 1.5px solid var(--golf-edge);
+      border: 0;
       border-radius: 8px;
-      background: linear-gradient(145deg, #8ae25a, var(--golf-deep));
+      background: var(--golf);
     }
 
     .data-square {
       width: 15.936px;
-      border: 1.5px solid var(--data-edge);
+      border: 0;
       border-radius: 3px;
-      background: linear-gradient(145deg, #21567e, var(--data-deep));
+      background: var(--data);
       box-shadow:
-        0 0 0 6px rgba(86, 169, 232, 0.08),
-        0 5px 12px rgba(0, 0, 0, 0.3);
+        0 0 0 1px rgba(255, 255, 255, 0.28),
+        0 3px 7px rgba(0, 0, 0, 0.24);
     }
 
     .ai-square {
       width: 7.073px;
-      border: 1px solid var(--ai-edge);
+      border: 0;
       border-radius: 1.5px;
       background: var(--ai);
       box-shadow:
-        0 0 0 6px rgba(255, 208, 0, 0.08),
-        0 5px 12px rgba(0, 0, 0, 0.3);
+        0 0 0 1px rgba(255, 255, 255, 0.24),
+        0 3px 7px rgba(0, 0, 0, 0.24);
     }
 
     .category-copy {
@@ -418,33 +393,28 @@
       flex: 0 0 13px;
       width: 13px;
       height: 13px;
-      border: 1.5px solid currentColor;
+      border: 0;
       border-radius: 50%;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.13);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16);
     }
 
     .label-swatch.golf {
-      color: var(--golf-edge);
       background: var(--golf);
     }
 
     .label-swatch.outdoor {
-      color: var(--outdoor-edge);
       background: var(--outdoor);
     }
 
     .label-swatch.shower {
-      color: var(--shower-edge);
       background: var(--shower);
     }
 
     .label-swatch.data {
-      color: var(--data-edge);
       background: var(--data);
     }
 
     .label-swatch.ai {
-      color: var(--ai-edge);
       background: var(--ai);
     }
 
@@ -481,7 +451,7 @@
       margin-top: 0.43rem;
       border-radius: 50%;
       background: var(--farm-edge);
-      box-shadow: 0 0 0 4px rgba(166, 221, 121, 0.1);
+      box-shadow: none;
     }
 
     .offsite-note {
@@ -491,11 +461,9 @@
       align-items: start;
       margin: 0 clamp(24px, 5vw, 64px);
       padding: clamp(24px, 3.5vw, 38px);
-      border: 1px solid rgba(86, 169, 232, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: var(--radius-lg);
-      background:
-        linear-gradient(110deg, rgba(23, 63, 96, 0.36), rgba(23, 63, 96, 0.08)),
-        var(--panel-3);
+      background: #0f181d;
     }
 
     .offsite-lead {
@@ -515,15 +483,17 @@
 
     .offsite-square {
       width: 55.482px;
-      border: 1.5px solid #b7e5ff;
+      border: 0;
       border-radius: 6px;
       background:
         repeating-linear-gradient(
           135deg,
-          rgba(145, 214, 255, 0.72) 0 5px,
-          rgba(23, 63, 96, 0.96) 5px 10px
+          rgba(118, 179, 214, 0.58) 0 5px,
+          rgba(23, 63, 96, 0.92) 5px 10px
         );
-      box-shadow: 0 7px 18px rgba(0, 0, 0, 0.34);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        0 3px 8px rgba(0, 0, 0, 0.22);
     }
 
     .offsite-scale-label {
